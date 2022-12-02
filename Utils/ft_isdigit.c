@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 13:58:45 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/02 19:34:01 by aceralin         ###   ########.fr       */
+/*   Created: 2022/05/03 12:01:10 by aceralin          #+#    #+#             */
+/*   Updated: 2022/12/02 19:31:08 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(t_pushswap *stack_a, t_pushswap *stack_b, char *error)
+int	ft_isdigit(int c)
 {
-	if( stack_a)
-	{
-		/*free*/
-		//lstdelone ou lstclear?
-	}
-	if(stack_b)
-		/*free*/
-	/* free stucture*/
-	ft_putendl_fd(error, 2);
-	exit(EXIT_FAILURE);
+	if (c >= '0' && c <= '9' )
+		return (1);
+	return (0);
 }

@@ -6,21 +6,43 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/01 16:41:18 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/02 22:07:39 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int	ft_arg_is_nmb(char *argv[])
+int	num_is_duplicate(char **s)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	while (s[i])
+	{
+		j = i + 1;
+		while (s[j])
+		{
+			if(ft_atoi(s[i]) == ft_atoi(s[j]))
+				return(0);
+			j++;
+		}
+		i++;
+	}
+	return(1);
+}
+
+int	ft_arg_is_nmb(char *s)
 {
 	int i;
 
 	i = 0;
-	while(argv[i])
-	{
-		
+	if ((s[i] == '-' || s[i] == '+') && s[ i + 1])
 		i++;
-	}
+	while((s[i]) && ft_isdigit(s[i]))
+		i++;
+	if(s[i] && !ft_isdigit(s[i]))
+		return(0);
+	return(1);
 }
 
 int	ft_check_ar_list(char *argv[])
@@ -31,10 +53,13 @@ int	ft_check_ar_list(char *argv[])
 	while(argv[i])
 	{
 		if(!(ft_arg_is_nmb(argv[i])) )
-	}
+			return(0);
+		i++;
 		
-		// verifier la stack, si bon format et si pas de chiffre repetes
-	
+	}
+	if (! num_is_duplicate(argv[i]))
+		return(0);
+	return(1);	
 	/*si av est un nombre*/
 	/*verifier overflow de int*/
 	/*si av est duplique*/
