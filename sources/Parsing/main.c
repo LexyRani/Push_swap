@@ -6,11 +6,12 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/02 22:07:39 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:06:47 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../Includes/push_swap.h"
+
 int	num_is_duplicate(char **s)
 {
 	int	i;
@@ -45,7 +46,7 @@ int	ft_arg_is_nmb(char *s)
 	return(1);
 }
 
-int	ft_check_ar_list(char *argv[])
+int	ft_check_arg_list(char *argv[])
 {
 	int	i;
 	
@@ -57,7 +58,7 @@ int	ft_check_ar_list(char *argv[])
 		i++;
 		
 	}
-	if (! num_is_duplicate(argv[i]))
+	if (! num_is_duplicate(argv))
 		return(0);
 	return(1);	
 	/*si av est un nombre*/
@@ -67,15 +68,14 @@ int	ft_check_ar_list(char *argv[])
 
 int	main( int argc, char *argv[])
 {
-	t_pushswap	*stack_a;
-	t_pushswap	*stack_b;
+	t_pswap	*stack_a;
+	t_pswap	*stack_b;
 	
 	if(argc < 2)
 		ft_error(NULL, NULL, "");/*a verifier sinon return (0)*/
 	if(ft_check_arg_list(argv))
 		ft_error(stack_a, NULL, "Error");
-	
-	// Error si instruction n'existe pas ou est mal formate.	
+	//stack_a = ft_stack();
 	// recuperer les donner et mettre dans la stack a
 	// initialiser la stack b a null
 	// recuperer la taille de la stack
