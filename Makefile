@@ -16,7 +16,7 @@ SRCS += sources/Utils/ft_lstdelone.c
 SRCS += sources/Utils/ft_putendl_fd.c
 SRCS += sources/Utils/ft_putstr_fd.c
 
-OBJS = ${SRCS: .C=.O}
+OBJS = $(SRCS: .c=.o)
 
 HEADER = Includes/push_swap.h
 
@@ -31,7 +31,7 @@ CFLAGS = -g #-Wall -Wextra -Werror
 all:			$(NAME) 
 
 $(NAME):		$(OBJS) $(HEADER)
-				@${CC} ${CFLAGS} ${OBJS}  -o push_swap
+				@$(CC)$(CFLAGS) $(OBJS)  -o push_swap
 
 clean:
 				$(RM) $(OBJS)
