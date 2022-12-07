@@ -6,11 +6,11 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:50:23 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/02 22:05:02 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/07 22:16:38 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../Includes/push_swap.h"
 
 int	ft_atoi(const char *nptr)
 {

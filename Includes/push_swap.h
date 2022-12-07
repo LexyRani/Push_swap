@@ -6,14 +6,16 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/05 22:06:37 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:12:16 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct	s_pswap
 {
@@ -51,5 +53,6 @@ int		ft_isdigit(int c);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *nptr);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

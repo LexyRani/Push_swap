@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/05 22:06:47 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/07 21:59:56 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,18 @@ int	ft_arg_is_nmb(char *s)
 int	ft_check_arg_list(char *argv[])
 {
 	int	i;
-	
+	printf("Check");
 	i = 0;
 	while(argv[i])
 	{
+		printf("nbr");
 		if(!(ft_arg_is_nmb(argv[i])) )
 			return(0);
 		i++;
 		
 	}
-	if (! num_is_duplicate(argv))
+	printf("dup");
+	if (!num_is_duplicate(argv))
 		return(0);
 	return(1);	
 	/*si av est un nombre*/
@@ -73,8 +75,11 @@ int	main( int argc, char *argv[])
 	
 	if(argc < 2)
 		ft_error(NULL, NULL, "");/*a verifier sinon return (0)*/
-	if(ft_check_arg_list(argv))
-		ft_error(stack_a, NULL, "Error");
+	if(ft_check_arg_list(argv) == 0)
+		printf("ICi");
+		// ft_putendl_fd("ok", 1);
+	
+	//	ft_error(stack_a, NULL, "Error");
 	//stack_a = ft_stack();
 	// recuperer les donner et mettre dans la stack a
 	// initialiser la stack b a null
@@ -82,5 +87,6 @@ int	main( int argc, char *argv[])
 	// algorythme push swap
 	// liberer la memoire de la stack a
 	// liberer la memoire de la stack b
+	
 	return(0);
 }

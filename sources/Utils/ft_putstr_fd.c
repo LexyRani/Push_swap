@@ -6,11 +6,11 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:58:16 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/01 14:37:51 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/07 22:16:20 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../Includes/push_swap.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

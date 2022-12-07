@@ -6,15 +6,15 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:51:20 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/01 15:03:34 by aceralin         ###   ########.fr       */
+/*   Updated: 2022/12/07 21:59:59 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../Includes/push_swap.h"
 
-void	ft_lstclear(/*t_list **lst*/, void (*del)(void*))
+/*void	ft_lstclear(t_p **lst, void (*del)(void*)) // a modifier le type
 {
-	/*t_list	*tmp;
+	t_pswap	*tmp;
 
 	if (lst)
 	{
@@ -25,5 +25,6 @@ void	ft_lstclear(/*t_list **lst*/, void (*del)(void*))
 			*lst = tmp;
 		}
 		*lst = NULL;
-	}*/
+	}
 }
+*/
