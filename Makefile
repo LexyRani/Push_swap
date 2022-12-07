@@ -16,15 +16,15 @@ SRCS += sources/Utils/ft_lstdelone.c
 SRCS += sources/Utils/ft_putendl_fd.c
 SRCS += sources/Utils/ft_putstr_fd.c
 
-OBJS = $(SRCS: .c=.o)
+OBJS = $(SRCS:.c=.o)
 
 HEADER = Includes/push_swap.h
 
-INCLUDES_DIR = -I ./Includes/
+#INCLUDES_DIR = -I ./Includes/
 
 # Compilateurs
 CC = cc
-CFLAGS = -g #-Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 #				##########   RULES   ##########             #
 
@@ -47,7 +47,7 @@ re:				fclean $(NAME)
 #$(NAME): $(OBJS) $(HEADER)
 #		${CC} ${SRCS} -o ${NAME} ${CFLAGS} ${INCLUDES_DIR}
 
-#%.o: %.c $(HEADER)
+# %.o: %.c $(HEADER)
 #	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES_DIR)
 
 #clean:
