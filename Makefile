@@ -5,6 +5,7 @@ NAME = push_swap
 #****************************Parsing**************************#
 SRCS += sources/Parsing/main.c
 SRCS += sources/Parsing/errors.c
+SRCS += sources/Parsing/parsing.c
 
 #****************************Move*****************************#
 
@@ -24,39 +25,39 @@ HEADER = Includes/push_swap.h
 
 # Compilateurs
 CC = cc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = #-g -Wall -Wextra -Werror
 
 #				##########   RULES   ##########             #
 
-all:			$(NAME) 
+#all:			$(NAME) 
 
-$(NAME):		$(OBJS) $(HEADER)
-				@$(CC)$(CFLAGS) $(OBJS)  -o push_swap
-
-clean:
-				$(RM) $(OBJS)
-
-fclean:			clean
-				$(RM) $(NAME)
-
-re:				fclean $(NAME)
-
-.PHONY:			all clean fclean re bonus
-
-#all: $(NAME)
-#$(NAME): $(OBJS) $(HEADER)
-#		${CC} ${SRCS} -o ${NAME} ${CFLAGS} ${INCLUDES_DIR}
-
-# %.o: %.c $(HEADER)
-#	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES_DIR)
+#$(NAME):		$(OBJS) $(HEADER)
+#@$(CC)$(CFLAGS) $(OBJS)  -o push_swap
 
 #clean:
-#	rm -f $(OBJS)
+#$(RM) $(OBJS)
 
-#fclean: clean
-#rm -f 
-#$(NAME)
+#fclean:			clean
+#				$(RM) $(NAME)
 
-#re: fclean all
+#re:				fclean $(NAME)
 
-#.PHONY: all clean fclean re
+#.PHONY:			all clean fclean re bonus
+
+all: $(NAME)
+$(NAME): $(OBJS) $(HEADER)
+		${CC} ${SRCS} -o ${NAME} ${CFLAGS} ${INCLUDES_DIR}
+
+%.o: %.c $(HEADER)
+	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES_DIR)
+
+clean:
+		rm -f $(OBJS)
+
+fclean: clean
+		rm -f $(NAME)
+			
+
+re: fclean all
+
+.PHONY: all clean fclean re
