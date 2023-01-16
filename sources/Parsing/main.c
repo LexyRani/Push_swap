@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/16 18:09:02 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:17:09 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,15 @@ int	main( int argc, char *argv[])
 	ft_print_stack(stack_a);
 	stack_b = NULL;
 	stack_b = ft_create_stack(element, stack_b);
-	ft_swap(stack_a);
 	
+	
+	//do_ss(stack_a,stack_b);
 	printf("---stack_a---\n");
-	ft_print_stack(stack_a);
+	do_sa(stack_a);
+	//ft_print_stack(stack_a);
 	printf("---stack_b---\n");
-	ft_print_stack(stack_b);
+	do_sb(stack_b);
+	//ft_print_stack(stack_b);
 
 	
 	// recuperer les donner et mettre dans la stack a

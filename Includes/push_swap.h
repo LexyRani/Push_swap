@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/16 17:49:22 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:13:45 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ t_pswap	*ft_create_stack(char *argv[], t_pswap *stack);
 
 /* swap*/
 void	ft_swap(t_pswap *stack);
-void	ft_ss(t_pswap *stack_a,t_pswap *stack_b);
+void	do_ss(t_pswap *stack_a, t_pswap *stack_b);
+void    do_sa(t_pswap *stack_a);
+void	do_sb(t_pswap *stack_b);
 /*push*/
 void	ft_pa(t_pswap *stack_a, t_pswap *stack_b);
 void	ft_pb(t_pswap *stack_a, t_pswap *stack_b);
