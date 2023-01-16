@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/16 13:16:12 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/16 18:09:02 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,17 +89,8 @@ int	main( int argc, char *argv[])
 	ft_print_stack(stack_a);
 	stack_b = NULL;
 	stack_b = ft_create_stack(element, stack_b);
-	//ft_pb(stack_a, stack_b);
-	// ft_pa(stack_a, stack_b);
-	// ft_sa(stack_a, stack_b);
-	// ft_sb(stack_a, stack_b);
-	// ft_ss(stack_a, stack_b);
-	// ft_ra(stack_a, stack_b);
-	// ft_rb(stack_a, stack_b);
-	// ft_rr(stack_a, stack_b);
-	// ft_rra(stack_a, stack_b);
-	// ft_rrb(stack_a, stack_b);
-	// ft_rrr(stack_a, stack_b);
+	ft_swap(stack_a);
+	
 	printf("---stack_a---\n");
 	ft_print_stack(stack_a);
 	printf("---stack_b---\n");

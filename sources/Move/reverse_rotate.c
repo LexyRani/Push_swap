@@ -6,23 +6,23 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:08 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/16 14:15:09 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:52:57 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
 
-void	ft_rra(t_pswap stack_a)
+void	ft_rra(t_pswap *stack_a)
 {
     
 }
 
-void	ft_rrb(t_pswap stack_b)
+void	ft_rrb(t_pswap *stack_b)
 {
     
 }
 
-void	ft_rrr(t_pswap stack_a, t_pswap stack_b)
+void	ft_rrr(t_pswap *stack_a, t_pswap *stack_b)
 {
     
 }
