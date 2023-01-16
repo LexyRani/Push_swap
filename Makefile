@@ -12,7 +12,7 @@ SRCS += sources/Parsing/parsing.c
 #****************************Utils****************************#
 SRCS += sources/Utils/ft_atoi.c
 SRCS += sources/Utils/ft_isdigit.c
-SRCS += sources/Utils/ft_lstclear.c
+SRCS += sources/Utils/ft_list.c
 SRCS += sources/Utils/ft_lstdelone.c
 SRCS += sources/Utils/ft_putendl_fd.c
 SRCS += sources/Utils/ft_putstr_fd.c

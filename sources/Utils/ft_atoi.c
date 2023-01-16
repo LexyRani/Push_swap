@@ -6,16 +6,16 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:50:23 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/07 22:16:38 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/16 12:33:40 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
 
-int	ft_atoi(const char *nptr)
+long int	ft_atoi(const char *nptr)
 {
 	int	i;
-	int	nb;
+	long int	nb;
 	int	sign;
 
 	i = 0;
@@ -28,15 +28,13 @@ int	ft_atoi(const char *nptr)
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-		{
 			sign = sign * (-1);
-		}
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{	
 		nb = nb * 10 + (nptr[i] - '0');
 		i++;
-	}	
+	}
 	return (nb * sign);
 }

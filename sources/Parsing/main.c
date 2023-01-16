@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/09 18:10:44 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:16:12 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_arg_is_nmb(char *s)
 		return(0);
 	return(1);
 }
-
+/* verif si arg = nombre et si pas duplique*/
 int	ft_check_arg_list(char *argv[])
 {
 	int	i;
@@ -82,11 +82,11 @@ int	main( int argc, char *argv[])
 	char	*element[4] = {"","4","5","6"};
 
 	if(argc < 2)
-		ft_error(NULL, NULL, "");/*a verifier sinon return (0)*/
+		ft_error(NULL, NULL, ""); /*a verifier sinon return (0)*/
 	if(!ft_check_arg_list(argv))	
 		ft_error(stack_a, NULL, "Error");
-	stack_a = ft_create_stack(argv, stack_a);
-	//ft_print_stack(stack_a);
+	stack_a = ft_create_stack(argv, stack_a);/*****/
+	ft_print_stack(stack_a);
 	stack_b = NULL;
 	stack_b = ft_create_stack(element, stack_b);
 	//ft_pb(stack_a, stack_b);
@@ -104,6 +104,8 @@ int	main( int argc, char *argv[])
 	ft_print_stack(stack_a);
 	printf("---stack_b---\n");
 	ft_print_stack(stack_b);
+
+	
 	// recuperer les donner et mettre dans la stack a
 	// initialiser la stack b a null
 	// recuperer la taille de la stack
