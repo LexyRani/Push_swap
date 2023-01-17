@@ -8,7 +8,7 @@ SRCS += sources/Parsing/errors.c
 SRCS += sources/Parsing/parsing.c
 
 #****************************Move*****************************#
-#SRCS += sources/Move/push.c
+SRCS += sources/Move/push.c
 SRCS += sources/Move/swap.c
 SRCS += sources/Move/rotate.c
 SRCS += sources/Move/reverse_rotate.c

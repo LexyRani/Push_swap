@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:08 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 18:22:07 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:24:53 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,3 @@ void	do_rrr(t_pswap **stack_a, t_pswap **stack_b)
     ft_reverse_rotate(stack_b);
     ft_putendl_fd("rrr", 1);
 }
-
-// ft_rra(stack_a, stack_b);
-// ft_rrb(stack_a, stack_b);
-// ft_rrr(stack_a, stack_b);

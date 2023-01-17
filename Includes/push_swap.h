@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 18:25:41 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:42:20 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ void	ft_swap(t_pswap *stack);
 void	do_ss(t_pswap *stack_a, t_pswap *stack_b);
 void    do_sa(t_pswap *stack_a);
 void	do_sb(t_pswap *stack_b);
+
 /*push*/
-void	ft_pa(t_pswap *stack_a, t_pswap *stack_b);
-void	ft_pb(t_pswap *stack_a, t_pswap *stack_b);
+void	ft_push(t_pswap **stack1, t_pswap **stack2);
+void	do_pa(t_pswap **stack_a, t_pswap **stack_b);
+void	do_pb(t_pswap **stack_b, t_pswap **stack_a);
 
 /* rotate*/
 void	ft_rotate(t_pswap **stack_a);
