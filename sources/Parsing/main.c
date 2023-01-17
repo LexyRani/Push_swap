@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 19:46:50 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 23:55:20 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,31 +79,33 @@ int	main( int argc, char *argv[])
 	t_pswap	*stack_a;
 	t_pswap	*stack_b;
 	stack_a = NULL;
-	char	*element[4] = {"","4","5","6"};
+	char	*element[4] = {"11","22","33","44"};
 
 	if(argc < 2)
 		ft_error(NULL, NULL, ""); /*a verifier sinon return (0)*/
 	if(!ft_check_arg_list(argv))	
 		ft_error(stack_a, NULL, "Error");
 	stack_a = ft_create_stack(argv, stack_a);/*****/
-	ft_print_stack(stack_a);
+	//ft_print_stack(stack_a);
 	stack_b = NULL;
 	stack_b = ft_create_stack(element, stack_b);
+	ft_stack_size(stack_a);
 	
-	printf("---stack_a---\n");
-	do_pa(&stack_a, &stack_b);
-	ft_print_stack(stack_b);
-	printf("---stack_b---\n");
-	do_pb(&stack_b, &stack_a);
-	ft_print_stack(stack_a);
 
-	
-	// recuperer les donner et mettre dans la stack a
-	// initialiser la stack b a null
-	// recuperer la taille de la stack
+	// attribuer des index selon si la valeur est plus grande ou plus petite
 	// algorythme push swap
 	// liberer la memoire de la stack a
 	// liberer la memoire de la stack b
 	
 	return(0);
 }
+
+	/*printf("%d\n", ft_stack_size(stack_a));
+	printf("---stack_a---\n");
+	do_pa(&stack_a, &stack_b);
+	do_ra(&stack_a);
+	do_sa(stack_a);
+	ft_print_stack(stack_a);
+	printf("---stack_b---\n");
+	do_pb(&stack_b, &stack_a);
+	ft_print_stack(stack_b);*/

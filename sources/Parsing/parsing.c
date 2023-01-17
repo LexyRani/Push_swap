@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:58:03 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/16 13:24:40 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 22:35:00 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,19 @@ t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
         ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i++])));
     }
     return (stack);
+}
+
+int ft_stack_size(t_pswap *stack_a)
+{
+    int i;
+    t_pswap *tmp;
+    
+    i = 0;
+    tmp = stack_a;
+    while(tmp)
+    {
+       tmp = tmp->next;
+        i++;
+    }
+     return(i);
 }

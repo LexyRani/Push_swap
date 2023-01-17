@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 19:42:20 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 23:53:10 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ struct	s_pswap
 typedef struct	s_pswap
 {
 	int				val;
+	int				index;
    	struct	s_pswap	*next;
 }						t_pswap;
 
@@ -37,7 +38,7 @@ typedef struct	s_pswap
 
 int		ft_check_arg_list(char *argv[]);
 t_pswap	*ft_create_stack(char *argv[], t_pswap *stack);
-
+int ft_stack_size(t_pswap *stack_a);
 /* ************************************************************************** */
 /*									Move									  */
 /* ************************************************************************** */
