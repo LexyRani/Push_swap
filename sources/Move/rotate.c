@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:36:14 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 11:23:55 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:27:04 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_rotate(t_pswap **stack)
     tmp->next = NULL;
     end->next = tmp;
 }
+
 // corriger .h avec les bons protypes
 /*
 void ft_reverse_rotate(t_pswap **stack)
@@ -40,21 +41,21 @@ void ft_reverse_rotate(t_pswap **stack)
     
 }*/
 
-void	do_ra(t_pswap *stack_a)
+void	do_ra(t_pswap **stack_a)
 {
-    ft_rotate(&stack_a);
+    ft_rotate(stack_a);
     ft_putendl_fd("ra", 1);
 }
-void	do_rb(t_pswap *stack_b)
+void	do_rb(t_pswap **stack_b)
 {
-	ft_rotate(&stack_b);
+	ft_rotate(stack_b);
     ft_putendl_fd("rb", 1);
 }
 
-void	do_rr(t_pswap *stack_a, t_pswap *stack_b)
+void	do_rr(t_pswap **stack_a, t_pswap **stack_b)
 {
-	ft_rotate(&stack_a);
-    ft_rotate(&stack_b);
+	ft_rotate(stack_a);
+    ft_rotate(stack_b);
     ft_putendl_fd("rr", 1);
 }
 
