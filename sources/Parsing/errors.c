@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 13:58:45 by aceralin          #+#    #+#             */
-/*   Updated: 2022/12/07 22:16:46 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:33:36 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_error(t_pswap *stack_a, t_pswap *stack_b, char *error)
 {
-	// /if( stack_a)
+	
+	stack_a = NULL;
+	stack_b= NULL;// /if( stack_a)
 	// {
 	// 	/*free*/
 	// 	//lstdelone ou lstclear?

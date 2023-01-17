@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:51:20 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 11:00:05 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:34:23 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 */
 t_pswap	*ft_stacklast(t_pswap *stack)
 {
-	t_pswap	tmp;
+	//t_pswap	tmp;
 	if (!stack)
 		return (NULL);
 	while (stack -> next)
