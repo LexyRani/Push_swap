@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:51:20 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 18:34:23 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:58:50 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ t_pswap	*ft_lstnew(int val)
 	new_element = malloc(sizeof(t_pswap));
 	if (!new_element)
 		return (NULL);
-	new_element->val= val;
+	new_element->val = val;
+	new_element->index = 1;
 	new_element->next = NULL;
 	return (new_element);
 }

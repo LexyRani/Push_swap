@@ -6,6 +6,7 @@ NAME = push_swap
 SRCS += sources/Parsing/main.c
 SRCS += sources/Parsing/errors.c
 SRCS += sources/Parsing/parsing.c
+SRCS += sources/Parsing/index.c
 
 #****************************Move*****************************#
 SRCS += sources/Move/push.c

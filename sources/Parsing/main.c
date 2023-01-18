@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/18 18:59:57 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:34:42 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_print_stack(t_pswap *stack)
 {
 	while(stack)
 	{
-		printf("%d\n", stack->val);
+		printf("%d -> index: %d\n", stack->val, stack->index);
 		stack = stack->next;
 	}
 }
@@ -41,14 +41,23 @@ int	main(int argc, char **argv)
 		ft_exit(stack_a, stack_b, NULL);
 	if (size == 2)
 		ft_exit(stack_a, stack_b, "sa");
-	if(size == 3)
-		ft_sort_three(stack_a);
-	//printf("%d\n", ft_stack_size(stack_a));
-	//printf("---stack_a---\n");
+	else if(size == 3)
+		ft_sort_three(&stack_a);
+	else if (size <= 5)
+		ft_sort_small(&stack_a, &stack_b);
+	// printf("---stack_a---\n");
+	// ft_print_stack(stack_a);
+	ft_get_index(stack_a);
+	printf("---stack_a---\n");
+	ft_print_stack(stack_a);
+	// printf("%d\n", ft_stack_size(stack_a));
+	// printf("---stack_a---\n");
+	// ft_print_stack(stack_a);
+	// printf("---stack_b---\n");
+	// ft_print_stack(stack_b);
 	//do_pa(&stack_a, &stack_b);
 	//do_ra(&stack_a);
 	//do_sa(stack_a);
-	//ft_print_stack(stack_a);
 	// attribuer des index selon si la valeur est plus grande ou plus petite
 	// algorithme push swap
 	// liberer la memoire de la stack a
