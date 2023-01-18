@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:36:22 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/18 21:11:35 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:28:17 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ void	do_pa(t_pswap **stack_b, t_pswap **stack_a)
 {
 	ft_push(stack_b, stack_a);
 	ft_putendl_fd("pa", 1);
+	//get_position(stack_a, stack_b);
 }
 
 void	do_pb(t_pswap **stack_a, t_pswap **stack_b)
 {
 	ft_push(stack_a, stack_b);
 	ft_putendl_fd("pb", 1);
+	//get_position(stack_a, stack_b);
 }

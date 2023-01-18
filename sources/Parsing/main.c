@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/18 20:34:42 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:17:36 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);//ft_error(NULL, NULL, NULL); /*a verifier sinon return (0)*/
-	if (!ft_check_arg_list(argv))	
-	 	ft_error(NULL, NULL, "Error");
+	// if (!ft_check_arg_list(argv))	
+	//  	ft_error(NULL, NULL, "Error");
 		//return (write(1, "Error\n", 6), 0);
 	//printf("hello?\n");
 	stack_a = NULL;
@@ -48,8 +48,8 @@ int	main(int argc, char **argv)
 	// printf("---stack_a---\n");
 	// ft_print_stack(stack_a);
 	ft_get_index(stack_a);
-	printf("---stack_a---\n");
-	ft_print_stack(stack_a);
+	// printf("---stack_a---\n");
+	// ft_print_stack(stack_a);
 	// printf("%d\n", ft_stack_size(stack_a));
 	// printf("---stack_a---\n");
 	// ft_print_stack(stack_a);
