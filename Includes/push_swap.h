@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 23:53:10 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:24:21 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ typedef struct	s_pswap
 int		ft_check_arg_list(char *argv[]);
 t_pswap	*ft_create_stack(char *argv[], t_pswap *stack);
 int ft_stack_size(t_pswap *stack_a);
+int	ft_arg_is_nmb(char *s);
+int	num_is_duplicate(char **s);
+
 /* ************************************************************************** */
 /*									Move									  */
 /* ************************************************************************** */
@@ -67,15 +70,17 @@ void	do_rra(t_pswap **stack_a);
 void	do_rrr(t_pswap **stack_a, t_pswap **stack_b);
 
 /* ************************************************************************** */
-/*									Algo									  */
+/*									Sort									  */
 /* ************************************************************************** */
-
-
+int		stack_issorted(t_pswap *stack_a);
+void    pushswap(t_pswap *stack_a, t_pswap *stack_b, int size);
+void	ft_sort_three(t_pswap *stack_a);
 /* ************************************************************************** */
 /*									Error									  */
 /* ************************************************************************** */
 
 void	ft_error(t_pswap *stack_a, t_pswap *stack_b, char *error);
+void	ft_exit(t_pswap *stack_a, t_pswap *stack_b, char *msg);
 
 /* ************************************************************************** */
 /*									Utils									  */

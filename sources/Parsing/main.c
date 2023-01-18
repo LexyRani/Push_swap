@@ -6,65 +6,12 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 23:55:20 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:59:57 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
 
-int	num_is_duplicate(char **s)
-{
-	int	i;
-	int j;
-
-	i = 0;
-	while (s[i])
-	{
-		
-		j = i + 1;
-		while (s[j])
-		{
-			if(ft_atoi(s[i]) == ft_atoi(s[j]))
-				return(0);
-			j++;
-		}
-		i++;
-	}
-	return(1);
-}
-
-int	ft_arg_is_nmb(char *s)
-{
-	int i;
-
-	i = 0;
-	if ((s[i] == '-' || s[i] == '+') && s[ i + 1])
-		i++;
-	while((s[i]) && ft_isdigit(s[i]))
-		i++;
-	if(s[i] && !ft_isdigit(s[i]))
-		return(0);
-	return(1);
-}
-/* verif si arg = nombre et si pas duplique*/
-int	ft_check_arg_list(char *argv[])
-{
-	int	i;
-	i = 1;
-	while(argv[i])
-	{
-		if(!(ft_arg_is_nmb(argv[i])) )
-			return(0);
-		i++;
-		
-	}
-	if (!num_is_duplicate(argv))
-		return(0);
-	return(1);	
-	/*si av est un nombre*/
-	/*verifier overflow de int*/
-	/*si av est duplique*/
-}
 void	ft_print_stack(t_pswap *stack)
 {
 	while(stack)
@@ -74,32 +21,44 @@ void	ft_print_stack(t_pswap *stack)
 	}
 }
 
-int	main( int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	t_pswap	*stack_a;
 	t_pswap	*stack_b;
+	int		size;
+
+	if (argc < 2)
+		return (0);//ft_error(NULL, NULL, NULL); /*a verifier sinon return (0)*/
+	if (!ft_check_arg_list(argv))	
+	 	ft_error(NULL, NULL, "Error");
+		//return (write(1, "Error\n", 6), 0);
+	//printf("hello?\n");
 	stack_a = NULL;
-	char	*element[4] = {"11","22","33","44"};
-
-	if(argc < 2)
-		ft_error(NULL, NULL, ""); /*a verifier sinon return (0)*/
-	if(!ft_check_arg_list(argv))	
-		ft_error(stack_a, NULL, "Error");
 	stack_a = ft_create_stack(argv, stack_a);/*****/
-	//ft_print_stack(stack_a);
 	stack_b = NULL;
-	stack_b = ft_create_stack(element, stack_b);
-	ft_stack_size(stack_a);
-	
-
+	size = ft_stack_size(stack_a);
+	if (stack_issorted(stack_a))
+		ft_exit(stack_a, stack_b, NULL);
+	if (size == 2)
+		ft_exit(stack_a, stack_b, "sa");
+	if(size == 3)
+		ft_sort_three(stack_a);
+	//printf("%d\n", ft_stack_size(stack_a));
+	//printf("---stack_a---\n");
+	//do_pa(&stack_a, &stack_b);
+	//do_ra(&stack_a);
+	//do_sa(stack_a);
+	//ft_print_stack(stack_a);
 	// attribuer des index selon si la valeur est plus grande ou plus petite
-	// algorythme push swap
+	// algorithme push swap
 	// liberer la memoire de la stack a
 	// liberer la memoire de la stack b
-	
-	return(0);
+	return (0);
 }
 
+//char	*element[4] = {"11","22","33","44"};
+//stack_b = ft_create_stack(element, stack_b);
+//ft_print_stack(stack_a);
 	/*printf("%d\n", ft_stack_size(stack_a));
 	printf("---stack_a---\n");
 	do_pa(&stack_a, &stack_b);

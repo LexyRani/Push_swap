@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:36:14 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 19:25:16 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:12:39 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_rotate(t_pswap **stack)
     end->next = tmp;
 }
 
-// corriger .h avec les bons protypes
 void	do_ra(t_pswap **stack_a)
 {
     ft_rotate(stack_a);

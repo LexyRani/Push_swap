@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:58:03 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/17 22:35:00 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:36:17 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
     {	
 		val = ft_atoi(argv[i]);
 		if (val > INT_MAX || val < INT_MIN) // liberer la liste et erreur
-			ft_error(stack, NULL, "Error : Overflow" ); // verif
+			{
+                write(1, "Error\n", 6);
+                exit(0);
+            }              
+//            }ft_error(stack, NULL, "Error" ); // verif
         ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i++])));
     }
     return (stack);
@@ -40,5 +44,55 @@ int ft_stack_size(t_pswap *stack_a)
        tmp = tmp->next;
         i++;
     }
-     return(i);
+    return (i);
+}
+
+int	ft_check_arg_list(char *argv[])
+{
+	int	i;
+	i = 1;
+	while(argv[i])
+	{
+		if(!(ft_arg_is_nmb(argv[i])) )
+			return(0);
+		i++;
+		
+	}
+	if (!num_is_duplicate(argv))
+		return(0);
+	return(1);	
+}
+
+int	ft_arg_is_nmb(char *s)
+{
+	int i;
+
+	i = 0;
+	if ((s[i] == '-' || s[i] == '+') && s[i + 1])
+		i++;
+	while((s[i]) && ft_isdigit(s[i]))
+		i++;
+	if(s[i] && !ft_isdigit(s[i]))
+		return(0);
+	return(1);
+}
+
+int	num_is_duplicate(char **s)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	while (s[i])
+	{
+		j = i + 1;
+		while (s[j])
+		{
+			if(ft_atoi(s[i]) == ft_atoi(s[j]))
+				return(0);
+			j++;
+		}
+		i++;
+	}
+	return(1);
 }

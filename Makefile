@@ -13,6 +13,10 @@ SRCS += sources/Move/swap.c
 SRCS += sources/Move/rotate.c
 SRCS += sources/Move/reverse_rotate.c
 
+#***************************Sorting***************************#
+#SRCS += sources/Sorting/push_swap.c
+SRCS += sources/Sorting/sort.c
+
 #****************************Utils****************************#
 SRCS += sources/Utils/ft_atoi.c
 SRCS += sources/Utils/ft_isdigit.c
