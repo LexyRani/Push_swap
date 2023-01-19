@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/18 21:13:22 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:01:58 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct	s_pswap
 {
 	int				val;
 	int				index;
+	int				position;
+	
    	struct	s_pswap	*next;
 }						t_pswap;
 
@@ -38,10 +40,11 @@ typedef struct	s_pswap
 
 int		ft_check_arg_list(char *argv[]);
 t_pswap	*ft_create_stack(char *argv[], t_pswap *stack);
-int ft_stack_size(t_pswap *stack_a);
-int	ft_arg_is_nmb(char *s);
-int	num_is_duplicate(char **s);
-void    ft_get_index(t_pswap *stack);
+int 	ft_stack_size(t_pswap *stack_a);
+int		ft_arg_is_nmb(char *s);
+int		num_is_duplicate(char **s);
+void	ft_get_index(t_pswap *stack);
+void	get_position(t_pswap **stack);
 
 /* ************************************************************************** */
 /*									Move									  */
@@ -50,7 +53,7 @@ void    ft_get_index(t_pswap *stack);
 /* swap*/
 void	ft_swap(t_pswap *stack);
 void	do_ss(t_pswap *stack_a, t_pswap *stack_b);
-void    do_sa(t_pswap *stack_a);
+void	do_sa(t_pswap *stack_a);
 void	do_sb(t_pswap *stack_b);
 
 /*push*/
@@ -74,7 +77,7 @@ void	do_rrr(t_pswap **stack_a, t_pswap **stack_b);
 /*									Sort									  */
 /* ************************************************************************** */
 int		stack_issorted(t_pswap *stack_a);
-void    pushswap(t_pswap *stack_a, t_pswap *stack_b, int size);
+void	pushswap(t_pswap *stack_a, t_pswap *stack_b, int size);
 void	ft_sort_three(t_pswap **stack_a);
 void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b);
 /* ************************************************************************** */
