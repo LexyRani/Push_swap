@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/19 23:17:57 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:33:20 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ int	main(int argc, char **argv)
 	t_pswap	*stack_b;
 	int		size;
 
+	
 	if (argc < 2)
-		return (0);//ft_error(NULL, NULL, NULL); /*a verifier sinon return (0)*/
+		return (0);
+	//ft_error(NULL, NULL, NULL); /*a verifier sinon return (0)*/
 	// if (!ft_check_arg_list(argv))	
 	//  	ft_error(NULL, NULL, "Error");
 		//return (write(1, "Error\n", 6), 0);
@@ -40,26 +42,28 @@ int	main(int argc, char **argv)
 	size = ft_stack_size(stack_a);
 	if (stack_issorted(stack_a))
 		ft_exit(stack_a, stack_b, NULL);
+	// printf("on va voir\n");
 	if (size == 2)
 		ft_exit(stack_a, stack_b, "sa");
 	else if(size == 3)
 		ft_sort_three(&stack_a);
-	
 	else if (size <= 5)
 	{
-		// ft_get_index(stack_a);
-		ft_sort_small(&stack_a, &stack_b);
+		// printf("sort small\n");
+		ft_sort_small(&stack_a, &stack_b);	
 	}
-	printf("---stack_a---\n");
-	ft_print_stack(stack_a);
+	//else if (size >= 5 )
+		//ft_sort_middle(&stack_a, &stack_b);
+	//printf("---stack_a---\n");
+	//ft_print_stack(stack_a);
 	
 	//printf("---stack_a---\n");
 	//ft_print_stack(stack_a);
 	// printf("%d\n", ft_stack_size(stack_a));
 	// printf("---stack_a---\n");
 	// ft_print_stack(stack_a);
-	printf("---stack_b---\n");
-	ft_print_stack(stack_b);
+	//printf("---stack_b---\n");
+	//ft_print_stack(stack_b);
 	//do_pa(&stack_a, &stack_b);
 	//do_ra(&stack_a);
 	//do_sa(stack_a);

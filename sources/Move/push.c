@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:36:22 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/19 15:32:30 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:40:28 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_push(t_pswap **stack1, t_pswap **stack2)
 {
 	t_pswap *tmp;
+
 	if(stack1 == NULL)
 		return;
 	tmp = (*stack1)->next;

@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:31:19 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/19 23:26:24 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:09:39 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_sort_three(t_pswap **stack_a)
 	{
 		do_rra(stack_a);
 		do_sa(*stack_a);
-		printf("here1\n");
 	}
 	//3 1 2 -> ra
 	//3 2 1 -> ra -> sa
@@ -48,18 +47,14 @@ void	ft_sort_three(t_pswap **stack_a)
 		do_ra(stack_a);
 		if (nbr3 < nbr2)
 			do_sa(*stack_a);
-		printf("here2\n");
 	}
 	//2 3 1 -> rra
 	else if (nbr1 < nbr2 && nbr1 > nbr3)
 		do_rra(stack_a);
 	//2 1 3 -> sa
 	else if (nbr1 > nbr2 && nbr1 < nbr3)
-	{
-		printf("here\n");
 		do_sa(*stack_a);
-	}
-	ft_print_stack(*stack_a);
+	//ft_print_stack(*stack_a);
 	/*while((*stack_a))
 	{
 		printf("position %d\n-> %d\n", (*stack_a)->position, (*stack_a)->val);
@@ -69,36 +64,38 @@ void	ft_sort_three(t_pswap **stack_a)
 // Moins de 5
 void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b)
 {
-	(void)stack_b;
-	int	median;
-
-	median = ft_stack_size(*stack_a)/2 + ft_stack_size(*stack_a) % 2;
-
-	//printf("median :%d\n", median);
 	ft_get_index(*stack_a);
-	//ft_print_stack(*stack_a);
-	while (ft_stack_size(*stack_a) > 3)
+	if (ft_stack_size(*stack_a) == 5)
 	{
-		// ft_print_stack(*stack_a);
-		while((*stack_a)->index != 1 && (*stack_a)->index != 2)
+		while (ft_stack_size(*stack_a) > 3)
 		{
-			//ft_get_index(*stack_a);
-			if((*stack_a)->position <= median && ((*stack_a)->index) != 1)
+			if((*stack_a)-> index == 1 || (*stack_a)-> index == 2)
+				do_pb(stack_a, stack_b);
+			else
 				do_ra(stack_a);
-			else if ((*stack_a)->position > median && ((*stack_a)->index) != 1)		
-				do_rra(stack_a);
 		}
-		// printf("pb\n");
-		do_pb(stack_a, stack_b);
 	}
-	
+	else if (ft_stack_size(*stack_a) == 4)
+	{
+		while (ft_stack_size(*stack_a) > 3)
+		{
+			if((*stack_a)-> index == 1)
+				do_pb(stack_a, stack_b);
+			else
+				do_ra(stack_a);
+		}
+	}
 	ft_sort_three(stack_a);
-	
-	if((*stack_b)-> val < (*stack_b)->next->val) // voir cas si stack b triee et et si 1 chiffre seulement dans la stack
+	if((*stack_b)->next == NULL)
+		do_pa(stack_b, stack_a);
+	if((ft_stack_size(*stack_b) == 2) && (*stack_b)-> val < (*stack_b)->next->val )
 		do_rb(stack_b);
 	while (ft_stack_size(*stack_b) > 0)
 		do_pa(stack_b, stack_a);
-	//ft_print_stack(*stack_a);
+}
+
+
+
 	//ft_print_stack(*stack_b);	
 	/*while((*stack_a))
 	{
@@ -106,7 +103,8 @@ void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b)
 		*stack_a = (*stack_a)->next;
 	}*/
 	
-}
+
+
 // while((*stack_b))
 	//{
 		//printf("position_b %d\n-> %d\n", (*stack_b)->position, (*stack_b)->val);
