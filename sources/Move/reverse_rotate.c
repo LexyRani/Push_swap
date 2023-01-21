@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:08 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/19 15:17:39 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:53:37 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_reverse_rotate(t_pswap **stack)
     t_pswap *head;
     t_pswap *end;
 
+    if(*stack == NULL || (*stack)->next == NULL)
+		return;
     tmp = *stack;
     head = ft_stacklast(*stack); 
     end = *stack;

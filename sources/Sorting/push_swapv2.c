@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swapv2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 23:22:10 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 20:37:22 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:50:27 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,14 @@ void    ft_push_into_a(t_pswap **stack_a, t_pswap **stack_b)
 	}
 }
 
-void    ft_push_or_rotate(t_pswap **stack_a, t_pswap **stack_b, int range)
+void    ft_push_or_rotate(t_pswap **stack_a, t_pswap **stack_b, int range, int div)
 {
-    if((*stack_a)->index <= range)
+    if((*stack_a)->index <= range + div)
+	{
         do_pb(stack_a, stack_b);
+		if ((*stack_b)->index <= range)
+			do_rb(stack_b);
+	}
     else
         do_ra(stack_a);
 }
@@ -71,6 +75,7 @@ void    ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div)
     int size;
     int size2;
     
+	// printf("are you leaving?\n");
     range = ft_stack_size(*stack_a) / div;
     ft_get_index(*stack_a);
     size2 = ft_stack_size(*stack_a);
@@ -80,10 +85,10 @@ void    ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div)
         i = 0;
         while(i < size)
         {
-            ft_push_or_rotate(stack_a, stack_b, range);
+            ft_push_or_rotate(stack_a, stack_b, range, div);
             i++;
         }
-        range += div;
+        range += div * 2;
     }
 	ft_push_into_a(stack_a, stack_b);
 }
