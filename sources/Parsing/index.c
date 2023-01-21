@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:15:29 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/19 19:30:37 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:19:58 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_get_index(t_pswap *stack)
 {
-	t_pswap *i;
-	t_pswap *j;
-	t_pswap *tmp;
+	t_pswap	*i;
+	t_pswap	*j;
+	t_pswap	*tmp;
 
 	tmp = stack;
 	while (tmp)
@@ -36,21 +36,19 @@ void	ft_get_index(t_pswap *stack)
 		}
 		i = i->next;
 	}
-	// printf("\n");
-	// ft_print_stack(stack);
 }
 
 void	get_position(t_pswap **stack )
 {
-	t_pswap *tmp;
+	t_pswap	*tmp;
 	int		pos;
-	
+
 	tmp = *stack;
 	pos = 1;
-	while(tmp)
+	while (tmp)
 	{
 		tmp->position = pos;
 		tmp = tmp->next;
-		pos ++; 
+		pos ++;
 	}
 }

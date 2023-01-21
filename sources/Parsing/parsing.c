@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:58:03 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/20 16:24:23 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:28:53 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,75 +16,74 @@
 
 t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
 {
-    int			i;
-    long int	val;
-	
-    i = 1;
+	int			i;
+	long int	val;
+
+	i = 1;
 	// gerer les - et + en focntion de la position dans la str
-	
-    while (argv[i])
-    {	
+	while (argv[i])
+	{	
 		val = ft_atoi(argv[i]);
 		if (val > INT_MAX || val < INT_MIN) // liberer la liste et erreur
-			{
-                write(1, "Error\n", 6);
-                exit(0);
-            }              
-//            }ft_error(stack, NULL, "Error" ); // verif
-        ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i++])));
-    }
-    return (stack);
+		{
+			write(1, "Error\n", 6);
+			exit(0);
+		}
+//            }ft_exit(stack, NULL, "Error" ); // verif
+		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i++])));
+	}
+	return (stack);
 }
 
-int ft_stack_size(t_pswap *stack_a)
+int	ft_stack_size(t_pswap *stack_a)
 {
-    int i;
-    t_pswap *tmp;
-    
-    i = 0;
-    tmp = stack_a;
-    while(tmp)
-    {
-       tmp = tmp->next;
-        i++;
-    }
-    return (i);
+	int		i;
+	t_pswap	*tmp;
+
+	i = 0;
+	tmp = stack_a;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }
 
 int	ft_check_arg_list(char *argv[])
 {
 	int	i;
+
 	i = 1;
-	while(argv[i])
+	while (argv[i])
 	{
-		if(!(ft_arg_is_nmb(argv[i])) )
-			return(0);
+		if (!(ft_arg_is_nmb(argv[i])))
+			return (0);
 		i++;
-		
 	}
 	if (!num_is_duplicate(argv))
-		return(0);
-	return(1);	
+		return (0);
+	return (1);
 }
 
 int	ft_arg_is_nmb(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if ((s[i] == '-' || s[i] == '+') && s[i + 1])
 		i++;
-	while((s[i]) && ft_isdigit(s[i]))
+	while ((s[i]) && ft_isdigit(s[i]))
 		i++;
-	if(s[i] && !ft_isdigit(s[i]))
-		return(0);
-	return(1);
+	if (s[i] && !ft_isdigit(s[i]))
+		return (0);
+	return (1);
 }
 
 int	num_is_duplicate(char **s)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (s[i])
@@ -92,11 +91,11 @@ int	num_is_duplicate(char **s)
 		j = i + 1;
 		while (s[j])
 		{
-			if(ft_atoi(s[i]) == ft_atoi(s[j]))
-				return(0);
+			if (ft_atoi(s[i]) == ft_atoi(s[j]))
+				return (0);
 			j++;
 		}
 		i++;
 	}
-	return(1);
+	return (1);
 }

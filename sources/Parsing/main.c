@@ -6,11 +6,15 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 22:35:39 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:10:22 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
+
+// vrifier si get position est utilise
+// fix stack_last 
+
 /*
 void	ft_print_stack(t_pswap *stack)
 {

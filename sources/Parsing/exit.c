@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 13:58:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 22:04:04 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:17:47 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_free_all(t_pswap *stack_a, t_pswap *stack_b)
 	{
 		tmp = stack_a;
 		stack_a = stack_a->next;
-		free(tmp);	
+		free(tmp);
 	}
 	while (stack_b)
 	{
@@ -28,7 +28,7 @@ void	ft_free_all(t_pswap *stack_a, t_pswap *stack_b)
 		stack_b = stack_b->next;
 		free(tmp);
 	}
-}  
+}
 
 void	ft_exit(t_pswap *stack_a, t_pswap *stack_b, char *msg)
 {

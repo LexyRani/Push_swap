@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:08 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 20:53:37 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:07:58 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,41 @@
 
 void	ft_reverse_rotate(t_pswap **stack)
 {
-    t_pswap *tmp;
-    t_pswap *head;
-    t_pswap *end;
+	t_pswap	*tmp;
+	t_pswap	*head;
+	t_pswap	*end;
 
-    if(*stack == NULL || (*stack)->next == NULL)
-		return;
-    tmp = *stack;
-    head = ft_stacklast(*stack); 
-    end = *stack;
-    while(end && end->next && end->next->next)
-        end = end->next;
-    *stack = head;
-    end->next = NULL;
-    head->next = tmp;  
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	tmp = *stack;
+	head = ft_stacklast(*stack);
+	end = *stack;
+	while (end && end->next && end->next->next)
+		end = end->next;
+	*stack = head;
+	end->next = NULL;
+	head->next = tmp;
 }
 
-void    do_rra(t_pswap **stack_a)
+void	do_rra(t_pswap **stack_a)
 {
-    ft_reverse_rotate(stack_a);
-    ft_putendl_fd("rra", 1);
-    get_position(stack_a);
+	ft_reverse_rotate(stack_a);
+	ft_putendl_fd("rra", 1);
+	get_position(stack_a);
 }
+
 void	do_rrb(t_pswap **stack_b)
 {
-    ft_reverse_rotate(stack_b);
-    ft_putendl_fd("rrb", 1);
-    get_position(stack_b);
+	ft_reverse_rotate(stack_b);
+	ft_putendl_fd("rrb", 1);
+	get_position(stack_b);
 }
 
 void	do_rrr(t_pswap **stack_a, t_pswap **stack_b)
 {
-    ft_reverse_rotate(stack_a);
-    ft_reverse_rotate(stack_b);
-    ft_putendl_fd("rrr", 1);
-    get_position(stack_a);
-    get_position(stack_b);
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
+	ft_putendl_fd("rrr", 1);
+	get_position(stack_a);
+	get_position(stack_b);
 }
