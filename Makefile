@@ -15,7 +15,7 @@ SRCS += sources/Move/rotate.c
 SRCS += sources/Move/reverse_rotate.c
 
 #***************************Sorting***************************#
-#SRCS += sources/Sorting/push_swap.c
+SRCS += sources/Sorting/push_swap.c
 SRCS += sources/Sorting/sort.c
 
 #****************************Utils****************************#

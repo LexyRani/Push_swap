@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/20 15:33:20 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:23:21 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,14 @@ int	main(int argc, char **argv)
 		// printf("sort small\n");
 		ft_sort_small(&stack_a, &stack_b);	
 	}
-	//else if (size >= 5 )
-		//ft_sort_middle(&stack_a, &stack_b);
-	//printf("---stack_a---\n");
-	//ft_print_stack(stack_a);
+	else if (size <= 100 )
+	{
+		ft_sort_big(&stack_a, &stack_b, 17);
+	}
+	else if (size <= 500)
+		ft_sort_big(&stack_a, &stack_b, 4);
+	// printf("---stack_a---\n");
+	// ft_print_stack(stack_a);
 	
 	//printf("---stack_a---\n");
 	//ft_print_stack(stack_a);
