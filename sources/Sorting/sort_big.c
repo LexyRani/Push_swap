@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swapv2.c                                      :+:      :+:    :+:   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 23:22:10 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 20:50:27 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 22:47:30 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
-/*
-void    pushswap(t_pswap *stack_a, t_pswap *stack_b, int size)
-{
-    // commencer en triant un groupe de 5 chiffres
-    // diviser la stack_a en plusieurs parties en indexant les numeros du plus grand au plus petit
-    // calculer le nombre de coups possible, faire un total puis faire selectionner ce qui consomme le moins de coup
-}*/
 
 void	move_to_max(t_pswap **stack)
 {
@@ -66,16 +59,11 @@ void    ft_push_or_rotate(t_pswap **stack_a, t_pswap **stack_b, int range, int d
 
 void    ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div)
 {
-    //creer les divisions avec les index  
-	// mettre les chiffres dont l index est < med + 10
-	// push ou rotate les element de toute la stack dans l ordre par portion de 10 (selon index)
-	// push les element de la stack b dans lordre du plus grand au plus petit
     int range;
     int i;
     int size;
     int size2;
     
-	// printf("are you leaving?\n");
     range = ft_stack_size(*stack_a) / div;
     ft_get_index(*stack_a);
     size2 = ft_stack_size(*stack_a);
@@ -92,3 +80,7 @@ void    ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div)
     }
 	ft_push_into_a(stack_a, stack_b);
 }
+ 	// creer les divisions avec les index  
+	// mettre les chiffres dont l index est < med + 10
+	// push ou rotate les element de toute la stack dans l ordre par portion de 10 (selon index)
+	// push les element de la stack b dans lordre du plus grand au plus petit

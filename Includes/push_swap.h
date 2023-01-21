@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:47:45 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 18:57:19 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:44:17 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,19 @@ void	do_rrr(t_pswap **stack_a, t_pswap **stack_b);
 /*									Sort									  */
 /* ************************************************************************** */
 int		stack_issorted(t_pswap *stack_a);
-void	pushswap(t_pswap *stack_a, t_pswap *stack_b, int size);
 void	ft_sort_three(t_pswap **stack_a);
 void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b);
-void    ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div);
+void	ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div);
+void    ft_push_or_rotate(t_pswap **stack_a, t_pswap **stack_b, int range , int div);
+void    ft_push_into_a(t_pswap **stack_a, t_pswap **stack_b);
+void	move_to_max(t_pswap **stack);
+
+
 /* ************************************************************************** */
 /*									Error									  */
 /* ************************************************************************** */
 
-void	ft_error(t_pswap *stack_a, t_pswap *stack_b, char *error);
+void	ft_free_all(t_pswap *stack_a, t_pswap *stack_b);
 void	ft_exit(t_pswap *stack_a, t_pswap *stack_b, char *msg);
 
 /* ************************************************************************** */

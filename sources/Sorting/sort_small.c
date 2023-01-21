@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:31:19 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/20 18:09:39 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:49:03 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,8 @@ void	ft_sort_three(t_pswap **stack_a)
 	//2 1 3 -> sa
 	else if (nbr1 > nbr2 && nbr1 < nbr3)
 		do_sa(*stack_a);
-	//ft_print_stack(*stack_a);
-	/*while((*stack_a))
-	{
-		printf("position %d\n-> %d\n", (*stack_a)->position, (*stack_a)->val);
-		*stack_a = (*stack_a)->next;
-	}*/
 }
-// Moins de 5
+
 void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b)
 {
 	ft_get_index(*stack_a);
@@ -94,31 +88,8 @@ void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b)
 		do_pa(stack_b, stack_a);
 }
 
-
-
-	//ft_print_stack(*stack_b);	
-	/*while((*stack_a))
-	{
-		printf("position %d\n-> %d\n", (*stack_a)->position, (*stack_a)->val);
-		*stack_a = (*stack_a)->next;
-	}*/
-	
-
-
 // while((*stack_b))
 	//{
 		//printf("position_b %d\n-> %d\n", (*stack_b)->position, (*stack_b)->val);
 		//*stack_b = (*stack_b)->next;
 	//}
-
-/*
-while (ft_stack_size(*stack_a) > 3)
-{
-	ft_get_index(*stack_a);
-	while ((*stack_a)->index != 1 ||(*stack_a)->index != 2 )
-		do_ra(stack_a);//i++;
-	do_pb(stack_a, stack_b);
-	//ft_move_to()
-	// ft_print_stack(*stack_a);
-	// return ;
-}*/

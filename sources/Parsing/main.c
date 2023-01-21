@@ -6,12 +6,12 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 21:00:10 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/21 22:35:39 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
-
+/*
 void	ft_print_stack(t_pswap *stack)
 {
 	while(stack)
@@ -20,7 +20,7 @@ void	ft_print_stack(t_pswap *stack)
 		stack = stack->next;
 	}
 	ft_putstr_fd("\n",1);
-}
+}*/
 
 int	main(int argc, char **argv)
 {
@@ -28,7 +28,6 @@ int	main(int argc, char **argv)
 	t_pswap	*stack_b;
 	int		size;
 
-	
 	if (argc < 2)
 		return (0);
 	//ft_error(NULL, NULL, NULL); /*a verifier sinon return (0)*/
@@ -42,14 +41,12 @@ int	main(int argc, char **argv)
 	size = ft_stack_size(stack_a);
 	if (stack_issorted(stack_a))
 		ft_exit(stack_a, stack_b, NULL);
-	// printf("on va voir\n");
 	if (size == 2)
 		ft_exit(stack_a, stack_b, "sa");
 	else if(size == 3)
 		ft_sort_three(&stack_a);
 	else if (size <= 5)
 	{
-		// printf("sort small\n");
 		ft_sort_small(&stack_a, &stack_b);	
 	}
 	else if (size <= 100 )
@@ -58,35 +55,7 @@ int	main(int argc, char **argv)
 	}
 	else if (size <= 500)
 		ft_sort_big(&stack_a, &stack_b, 25);
-	// printf("---stack_a---\n");
-	// ft_print_stack(stack_a);
-	
-	//printf("---stack_a---\n");
-	//ft_print_stack(stack_a);
-	// printf("%d\n", ft_stack_size(stack_a));
-	// printf("---stack_a---\n");
-	// ft_print_stack(stack_a);
-	//printf("---stack_b---\n");
-	//ft_print_stack(stack_b);
-	//do_pa(&stack_a, &stack_b);
-	//do_ra(&stack_a);
-	//do_sa(stack_a);
-	// attribuer des index selon si la valeur est plus grande ou plus petite
-	// algorithme push swap
-	// liberer la memoire de la stack a
-	// liberer la memoire de la stack b
+	ft_free_all(stack_a, stack_b);
 	return (0);
 }
 
-//char	*element[4] = {"11","22","33","44"};
-//stack_b = ft_create_stack(element, stack_b);
-//ft_print_stack(stack_a);
-	/*printf("%d\n", ft_stack_size(stack_a));
-	printf("---stack_a---\n");
-	do_pa(&stack_a, &stack_b);
-	do_ra(&stack_a);
-	do_sa(stack_a);
-	ft_print_stack(stack_a);
-	printf("---stack_b---\n");
-	do_pb(&stack_b, &stack_a);
-	ft_print_stack(stack_b);*/
