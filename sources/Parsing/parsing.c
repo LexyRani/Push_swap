@@ -6,13 +6,11 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:58:03 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 23:28:53 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/22 23:17:40 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
-
-//char	ft_
 
 t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
 {
@@ -20,16 +18,13 @@ t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
 	long int	val;
 
 	i = 1;
-	// gerer les - et + en focntion de la position dans la str
 	while (argv[i])
 	{	
 		val = ft_atoi(argv[i]);
-		if (val > INT_MAX || val < INT_MIN) // liberer la liste et erreur
+		if (val > INT_MAX || val < INT_MIN)
 		{
-			write(1, "Error\n", 6);
-			exit(0);
+			ft_exit(NULL, NULL, "Error");
 		}
-//            }ft_exit(stack, NULL, "Error" ); // verif
 		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i++])));
 	}
 	return (stack);

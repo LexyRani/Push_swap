@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 14:50:23 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/22 23:20:05 by aceralin         ###   ########.fr       */
+/*   Created: 2023/01/22 22:19:06 by aceralin          #+#    #+#             */
+/*   Updated: 2023/01/22 22:27:25 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
 
-long int	ft_atoi(const char *nptr)
+void	push_swap(t_pswap *stack_a, t_pswap *stack_b)
 {
-	int			i;
-	long int	nb;
-	int			sign;
+	int	size;
 
-	i = 0;
-	nb = 0;
-	sign = 1;
-	if (!nptr)
-		return (0);
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr [i] == ' '))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign = sign * (-1);
-		i++;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{	
-		nb = nb * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (nb * sign);
+	size = ft_stack_size(stack_a);
+	if (stack_issorted(stack_a))
+		ft_exit(stack_a, stack_b, NULL);
+	if (size == 2)
+		ft_exit(stack_a, stack_b, "sa");
+	else if (size == 3)
+		ft_sort_three(&stack_a);
+	else if (size <= 5)
+		ft_sort_small(&stack_a, &stack_b);
+	else if (size <= 100)
+		ft_sort_big(&stack_a, &stack_b, 10);
+	else if (size <= 500)
+		ft_sort_big(&stack_a, &stack_b, 25);
 }

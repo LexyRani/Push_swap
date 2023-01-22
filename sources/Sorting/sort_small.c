@@ -6,13 +6,12 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:31:19 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/21 22:57:27 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/22 22:51:19 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/push_swap.h"
 
-/* To fix : Ligne trop longue et plus de 25 lignes dans sort_small*/
 int	stack_issorted(t_pswap *stack_a)
 {
 	while (stack_a->next)
@@ -50,6 +49,16 @@ void	ft_sort_three(t_pswap **stack_a)
 		do_sa(*stack_a);
 }
 
+void	ft_pa_or_rb(t_pswap **s_a, t_pswap **s_b)
+{
+	if ((*s_b)->next == NULL)
+		do_pa(s_b, s_a);
+	if ((ft_stack_size(*s_b) == 2) && (*s_b)-> val < (*s_b)->next->val)
+		do_rb(s_b);
+	while (ft_stack_size(*s_b) > 0)
+		do_pa(s_b, s_a);
+}
+
 void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b)
 {
 	ft_get_index(*stack_a);
@@ -74,10 +83,5 @@ void	ft_sort_small(t_pswap **stack_a, t_pswap **stack_b)
 		}
 	}
 	ft_sort_three(stack_a);
-	if ((*stack_b)->next == NULL)
-		do_pa(stack_b, stack_a);
-	if ((ft_stack_size(*stack_b) == 2) && (*stack_b)-> val < (*stack_b)->next->val)
-		do_rb(stack_b);
-	while (ft_stack_size(*stack_b) > 0)
-		do_pa(stack_b, stack_a);
+	ft_pa_or_rb(stack_a, stack_b);
 }
