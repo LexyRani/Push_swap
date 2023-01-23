@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 23:22:10 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/22 23:12:30 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:44:32 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,3 @@ void	ft_sort_big(t_pswap **stack_a, t_pswap **stack_b, int div)
 	}
 	ft_push_into_a(stack_a, stack_b);
 }
-
-	// creer les divisions avec les index  
-	// mettre les chiffres dont l index est < med + 10
-	// push ou rotate les element de toute la stack dans l 
-	//ordre par portion de 10 (selon index)
-	// push les element de la stack b dans lordre du plus grand au plus petit

@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:21:57 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/22 22:28:47 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:33:12 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_a = ft_create_stack(argv, stack_a);
 	stack_b = NULL;
-	push_swap(stack_a, stack_b);
+	push_swap(&stack_a, &stack_b);
 	ft_free_all(stack_a, stack_b);
 	return (0);
 }
-
-// fix stack_last 

@@ -2,28 +2,27 @@ NAME = push_swap
 
 #Sources
 
-#****************************Parsing**************************#
+#****************************PARSING**************************#
 SRCS += sources/Parsing/main.c
 SRCS += sources/Parsing/exit.c
 SRCS += sources/Parsing/parsing.c
 SRCS += sources/Parsing/index.c
 
-#****************************Move*****************************#
+#****************************MOVE*****************************#
 SRCS += sources/Move/push.c
 SRCS += sources/Move/swap.c
 SRCS += sources/Move/rotate.c
 SRCS += sources/Move/reverse_rotate.c
 
-#***************************Sorting***************************#
+#***************************SORTING***************************#
 SRCS += sources/Sorting/push_swap.c 
 SRCS += sources/Sorting/sort_big.c
 SRCS += sources/Sorting/sort_small.c
 
-#****************************Utils****************************#
+#****************************UTILS****************************#
 SRCS += sources/Utils/ft_atoi.c
 SRCS += sources/Utils/ft_isdigit.c
 SRCS += sources/Utils/ft_list.c
-SRCS += sources/Utils/ft_lstdelone.c
 SRCS += sources/Utils/ft_putendl_fd.c
 SRCS += sources/Utils/ft_putstr_fd.c
 
@@ -31,28 +30,11 @@ OBJS = $(SRCS:.c=.o)
 
 HEADER = Includes/push_swap.h
 
-#INCLUDES_DIR = -I ./Includes/
-
-# Compilateurs
+#**************************Compilateurs***********************#
 CC = cc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-#				##########   RULES   ##########             #
-
-#all:			$(NAME) 
-
-#$(NAME):		$(OBJS) $(HEADER)
-#@$(CC)$(CFLAGS) $(OBJS)  -o push_swap
-
-#clean:
-#$(RM) $(OBJS)
-
-#fclean:			clean
-#				$(RM) $(NAME)
-
-#re:				fclean $(NAME)
-
-#.PHONY:			all clean fclean re bonus
+#*****************************RULES***************************#
 
 all: $(NAME)
 $(NAME): $(OBJS) $(HEADER)

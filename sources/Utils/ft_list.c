@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:51:20 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/22 23:19:10 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:03:13 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 t_pswap	*ft_stacklast(t_pswap *stack)
 {
-	//t_pswap	tmp;
-	if (!stack)
+	t_pswap	*tmp;
+
+	tmp = stack;
+	if (!tmp)
 		return (NULL);
-	while (stack -> next)
-		stack = stack -> next;
-	return (stack);
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }
 
 t_pswap	*ft_lstnew(int val)
@@ -35,19 +37,10 @@ t_pswap	*ft_lstnew(int val)
 	return (new_element);
 }
 
-t_pswap	*ft_lstlast(t_pswap *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
-}
-
 void	ft_lstadd_back(t_pswap **lst, t_pswap *new)
 {	
 	if (*lst)
-		ft_lstlast(*lst)->next = new;
+		ft_stacklast(*lst)->next = new;
 	else
 		*lst = new;
 }

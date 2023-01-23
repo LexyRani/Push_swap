@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:31:19 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/22 22:51:19 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:52:45 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 int	stack_issorted(t_pswap *stack_a)
 {
-	while (stack_a->next)
+	t_pswap	*tmp;
+
+	tmp = stack_a;
+	while (tmp->next)
 	{
-		if (stack_a->val > stack_a->next->val)
+		if (tmp->val > tmp->next->val)
 			return (0);
-		stack_a = stack_a->next;
+		tmp = tmp->next;
 	}
 	return (1);
 }

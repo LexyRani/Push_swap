@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:58:03 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/22 23:17:40 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:43:51 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
 {
 	int			i;
 	long int	val;
+	t_pswap		*list;
 
 	i = 1;
 	while (argv[i])
@@ -25,7 +26,11 @@ t_pswap	*ft_create_stack(char *argv[], t_pswap *stack)
 		{
 			ft_exit(NULL, NULL, "Error");
 		}
-		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(argv[i++])));
+		list = ft_lstnew(ft_atoi(argv[i++]));
+		if (!list)
+			ft_exit(stack, NULL, "Error");
+		else
+			ft_lstadd_back(&stack, list);
 	}
 	return (stack);
 }
@@ -80,7 +85,7 @@ int	num_is_duplicate(char **s)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (s[i])
 	{
 		j = i + 1;
