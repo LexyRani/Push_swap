@@ -6,7 +6,7 @@
 /*   By: aceralin <aceralin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 22:19:06 by aceralin          #+#    #+#             */
-/*   Updated: 2023/01/23 18:45:07 by aceralin         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:24:00 by aceralin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_swap(t_pswap **stack_a, t_pswap **stack_b)
 	if (stack_issorted(*stack_a))
 		ft_exit(*stack_a, *stack_b, NULL);
 	if (size == 2)
-		ft_exit(*stack_a, *stack_b, "sa");
+		do_sa(*stack_a);
 	else if (size == 3)
 		ft_sort_three(stack_a);
 	else if (size <= 5)
